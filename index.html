@@ -31,12 +31,6 @@
             margin: 0;
             line-height: 1.6;
             overflow-x: hidden; 
-            
-            /* ---- НОВЫЙ ФОН ИЗ ДЁРНА ---- */
-            background-image: url('https://i.imgur.com/K0Zf6kH.png'); /* URL изображения дёрна Minecraft */
-            background-repeat: repeat; /* Повторяем изображение для заполнения всего фона */
-            background-attachment: fixed; /* Закрепляем фон, чтобы он не прокручивался */
-            background-size: 64px 64px; /* Размер одного блока дёрна, можно настроить */
         }
 
         h1 {
@@ -194,26 +188,6 @@
             opacity: 0;
             transition: opacity 0.3s ease-in-out;
             z-index: 1000;
-        }
-
-        /* ---- НОВЫЙ СТИЛЬ ДЛЯ ЛИМОНА ---- */
-        .lemon-decoration {
-            position: fixed; /* Закрепляем лимон относительно окна браузера */
-            bottom: 50px; /* Отступ от низа */
-            right: 50px; /* Отступ справа */
-            width: 120px; /* Ширина лимона, можно настроить */
-            height: auto;
-            opacity: 0.8; /* Небольшая прозрачность */
-            transform: rotate(15deg); /* Небольшой поворот для игривости */
-            z-index: 500; /* Чтобы лимон был над фоном, но под уведомлением */
-            filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.2)); /* Легкая тень */
-        }
-
-        /* Медиа-запрос для скрытия лимона на очень маленьких экранах */
-        @media (max-width: 768px) {
-            .lemon-decoration {
-                display: none;
-            }
         }
     </style>
 </head>
@@ -386,8 +360,6 @@
 
     <div id="copy-notification">Скопировано!</div>
 
-    <img src="https://i.imgur.com/2s4cK9I.png" alt="Декоративный лимон 2D" class="lemon-decoration">
-
     <footer class="site-footer">
         <h3>Контакты для связи и вопросов</h3>
         <p>Если у вас возникли вопросы по правилам или предложения, вы можете связаться с администрацией:</p>
@@ -421,7 +393,7 @@
         function showNotification() {
             const notification = document.getElementById('copy-notification');
             // Применяем стили, чтобы уведомление о копировании было видно
-            notification.style.backgroundColor = '#4CAF50'; /* Лаймовый акцент */
+            notification.style.backgroundColor = '#4CAF50'; // Лаймовый акцент
             notification.innerText = 'Скопировано!';
             notification.style.opacity = 1;
             setTimeout(() => {
